@@ -52,6 +52,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
         // Get the movie that corresponds to the table view row
         let movie = movie[indexPath.row]
+        
+        movie.fetchImage {
+            DispatchQueue.main.async {
+                cell.ImageView.image = movie.image
+            }
+        }
 
         // Configure the cell with it's associated movie
         cell.configure(with: movie)

@@ -6,17 +6,53 @@
 //
 
 import Foundation
+import UIKit
 
-
-
-struct Movie {
-        let movieName: String
-        let description: String
-        let artworkUrl: URL
-        let voteAverage: String
-        let numberOfVotes: String
-        let popularityScore: String
+class Movie {
+    
+    let movieName: String
+    let description: String
+    let artworkUrl: URL
+    let voteAverage: String
+    let numberOfVotes: String
+    let popularityScore: String
+    
+    var image: UIImage?
+    
+    init(movieName: String, description: String, artworkUrl: URL, voteAverage: String, numberOfVotes: String, popularityScore: String, image: UIImage? = nil) {
+        self.movieName = movieName
+        self.description = description
+        self.artworkUrl = artworkUrl
+        self.voteAverage = voteAverage
+        self.numberOfVotes = numberOfVotes
+        self.popularityScore = popularityScore
+        self.image = image
     }
+    
+    func fetchImage(completion: @escaping () -> Void) {
+        
+//        let url = URL(string: artworkUrl)!
+        URLSession.shared.dataTask(with: artworkUrl) { [weak self] data, response, error in
+            
+            guard error == nil else {
+                print(error, error?.localizedDescription)
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200,
+                  let data = data else {
+                print("error in response")
+                return
+            }
+            
+            let image = UIImage(data: data)
+            self?.image = image
+            completion()
+        }.resume()
+    }
+}
+
 
     extension Movie {
         

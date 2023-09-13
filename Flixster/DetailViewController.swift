@@ -9,34 +9,41 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var DetailImageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var TitleView: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var voteAverageLabel: UILabel!
     
-    @IBOutlet weak var Vote: UILabel!
-    
-    
-    @IBOutlet weak var VoteView: UILabel!
+    @IBOutlet weak var votesLabel: UILabel!
     
     
-    @IBOutlet weak var VoteAverage: UILabel! 
+    @IBOutlet weak var popularityNumberLabel: UILabel!
     
+    @IBOutlet weak var popularityLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    var movie: Movie?
+//            let popularityScore: String
+            
     
-    @IBOutlet weak var CountView: UILabel!
-    
-    
-    @IBOutlet weak var TextView: UITextView!
-    
-    
-    var movie: Movie!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        titleLabel.text = movie?.movieName
+        //DetailImageView.image = movie.De: String
+        descriptionTextView.text = movie?.description
+//            let artworkUrl: URL
+        voteAverageLabel.text = movie?.voteAverage
+        votesLabel.text = movie?.numberOfVotes
+        imageView.image = movie?.image
+    }
+        
+    
     /*
     // MARK: - Navigation
 
