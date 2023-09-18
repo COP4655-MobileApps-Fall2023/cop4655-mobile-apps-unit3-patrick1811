@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C106B192AB8B328003F6587 /* MoviePostersViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C106B182AB8B328003F6587 /* MoviePostersViewContoller.swift */; };
 		1CBBFC602AAF733400A79EE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC5F2AAF733400A79EE4 /* AppDelegate.swift */; };
 		1CBBFC622AAF733400A79EE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC612AAF733400A79EE4 /* SceneDelegate.swift */; };
 		1CBBFC642AAF733400A79EE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC632AAF733400A79EE4 /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		1CBBFC742AAF79ED00A79EE4 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC732AAF79ED00A79EE4 /* MovieTableViewCell.swift */; };
 		1CBBFC762AB1075700A79EE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC752AB1075700A79EE4 /* DetailViewController.swift */; };
 		1CBBFC782AB1103000A79EE4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC772AB1103000A79EE4 /* Movie.swift */; };
+		1CBBFC862AB8B1C400A79EE4 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBBFC852AB8B1C400A79EE4 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C106B182AB8B328003F6587 /* MoviePostersViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePostersViewContoller.swift; sourceTree = "<group>"; };
 		1CBBFC5C2AAF733400A79EE4 /* Flixster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CBBFC5F2AAF733400A79EE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CBBFC612AAF733400A79EE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		1CBBFC732AAF79ED00A79EE4 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		1CBBFC752AB1075700A79EE4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1CBBFC772AB1103000A79EE4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1CBBFC852AB8B1C400A79EE4 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				1CBBFC612AAF733400A79EE4 /* SceneDelegate.swift */,
 				1CBBFC632AAF733400A79EE4 /* ViewController.swift */,
 				1CBBFC652AAF733400A79EE4 /* Main.storyboard */,
+				1C106B182AB8B328003F6587 /* MoviePostersViewContoller.swift */,
+				1CBBFC852AB8B1C400A79EE4 /* MovieCell.swift */,
 				1CBBFC772AB1103000A79EE4 /* Movie.swift */,
 				1CBBFC752AB1075700A79EE4 /* DetailViewController.swift */,
 				1CBBFC732AAF79ED00A79EE4 /* MovieTableViewCell.swift */,
@@ -147,12 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CBBFC862AB8B1C400A79EE4 /* MovieCell.swift in Sources */,
 				1CBBFC642AAF733400A79EE4 /* ViewController.swift in Sources */,
 				1CBBFC602AAF733400A79EE4 /* AppDelegate.swift in Sources */,
 				1CBBFC782AB1103000A79EE4 /* Movie.swift in Sources */,
 				1CBBFC762AB1075700A79EE4 /* DetailViewController.swift in Sources */,
 				1CBBFC742AAF79ED00A79EE4 /* MovieTableViewCell.swift in Sources */,
 				1CBBFC622AAF733400A79EE4 /* SceneDelegate.swift in Sources */,
+				1C106B192AB8B328003F6587 /* MoviePostersViewContoller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

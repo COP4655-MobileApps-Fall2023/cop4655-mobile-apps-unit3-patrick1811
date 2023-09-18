@@ -44,6 +44,8 @@ class DetailViewController: UIViewController {
     }
         
     
+    @IBAction func seeSimilarMovies(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
