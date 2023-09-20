@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Nuke
+
 
 class DetailViewController: UIViewController {
 
@@ -28,9 +30,12 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let posterPath = movie?.image
+//       let imageURL = URL(string:"https://api.themoviedb/.org/3/movie/now_playing?api_key=61f14071da0c1cc4cc77b919014266b2")
+//        Nuke.loadImage(with: imageURL, into: imageView)
+//        // Do any additional setup after loading the view.
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

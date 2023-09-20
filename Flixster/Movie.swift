@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Movie {
+class Movie: Decodable {
     
     let movieName: String
     let description: String
@@ -29,9 +29,37 @@ class Movie {
         self.image = image
     }
     
+    
+    private enum CodingKeys: CodingKey {
+        case movieName
+        case description
+        case artworkUrl
+        case voteAverage
+        case numberOfVotes
+        case popularityScore
+        case image
+    }
+    class Results: Decodable {
+        
+    }
+     
+    
+    
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        movieName = try container.decode(String.self, forKey: .movieName)
+        description = try container.decode(String.self, forKey: .description)
+        artworkUrl = try container.decode(URL.self, forKey: .artworkUrl)
+        voteAverage = try container.decode(String.self, forKey: .voteAverage)
+        numberOfVotes = try container.decode(String.self, forKey: .numberOfVotes)
+        popularityScore = try container.decode(String.self, forKey: .popularityScore)
+        image = nil
+    }
+    
     func fetchImage(completion: @escaping () -> Void) {
         
-//        let url = URL(string: artworkUrl)!
+        //        let url = URL(string: artworkUrl)!
         URLSession.shared.dataTask(with: artworkUrl) { [weak self] data, response, error in
             
             guard error == nil else {
@@ -51,6 +79,37 @@ class Movie {
             completion()
         }.resume()
     }
+    
+    static func playMovie(completion: @escaping ([Movie]) -> Void) {
+        
+        //        let url = URL(string: artworkUrl)!
+        let url = URL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=61f14071da0c1cc4cc77b919014266b2")
+        URLSession.shared.dataTask( with: url!) { data, response, error in
+            
+            guard error == nil else {
+                print(error, error?.localizedDescription)
+               completion([])
+               return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200,
+                  let data = data else {
+                print("error in response")
+                completion([])
+                return
+            }
+            
+            do {
+                let movies = try JSONDecoder().decode([Movie].self, from: data)
+                completion(movies)
+            } catch {
+                print(error.localizedDescription)
+                completion([])
+            }
+        }.resume()
+    }
+    
 }
 
 

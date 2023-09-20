@@ -13,7 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Movie.playMovie {
+            movies in
+            print(movies.count)
+            movies.forEach { print($0.movieName) }
+            
+        }
+        
         return true
     }
 
