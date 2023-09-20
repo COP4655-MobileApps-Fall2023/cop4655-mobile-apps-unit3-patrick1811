@@ -1,11 +1,11 @@
 
-# Project 3 - *Name of App Here*
+# Project 3 - *Flixster 2*
 
-Submitted by: **Your Name Here**
+Submitted by: **Patrick**
 
-**Name of your app** is an app that introduces networking ... [TODO] 
+**Flixster** is an app that introduces networking ... [TODO] 
 
-Time spent: **X** hours spent in total
+Time spent: **12** hours spent in total
 
 ## Required Features
 
